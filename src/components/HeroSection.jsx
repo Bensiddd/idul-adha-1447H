@@ -4,12 +4,12 @@ import CrescentStar from "./CrescentStar";
 import IslamicPattern from "./IslamicPattern";
 import OrnamentDivider from "./OrnamentDivider";
 
-const PARTICLES = Array.from({ length: 14 }, (_, i) => ({
+const PARTICLES = Array.from({ length: 22 }, (_, i) => ({
   id: i,
-  left: `${5 + Math.random() * 90}%`,
-  delay: `${Math.random() * 10}s`,
-  duration: `${8 + Math.random() * 12}s`,
-  size: `${2 + Math.random() * 4}px`,
+  left: `${3 + Math.random() * 94}%`,
+  delay: `${Math.random() * 12}s`,
+  duration: `${7 + Math.random() * 14}s`,
+  size: i % 4 === 0 ? `${6 + Math.random() * 3}px` : `${1 + Math.random() * 4}px`,
 }));
 
 function Particles() {
@@ -30,6 +30,7 @@ function Particles() {
             height: p.size,
             animationDelay: p.delay,
             animationDuration: p.duration,
+            boxShadow: parseFloat(p.size) > 5 ? "0 0 6px rgba(212,175,55,0.5)" : "none",
           }}
         />
       ))}
@@ -80,7 +81,7 @@ export default function HeroSection() {
 
         <a
           href="#makna"
-          className="inline-flex items-center gap-2 bg-gold text-primary-dark font-semibold px-7 py-3 rounded-full hover:bg-gold-light hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 text-sm"
+          className="inline-flex items-center gap-2 bg-gold text-primary-dark font-semibold px-7 py-3 rounded-full hover:bg-gold-light hover:scale-105 hover:shadow-[0_0_30px_rgba(212,175,55,0.35)] transition-all duration-300 text-sm"
           aria-label="Lihat makna kurban"
         >
           Lihat Makna Kurban

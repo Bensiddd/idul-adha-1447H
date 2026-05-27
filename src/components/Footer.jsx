@@ -1,4 +1,5 @@
 import { Camera, Globe, MessageCircle } from "lucide-react";
+import OrnamentDivider from "./OrnamentDivider";
 
 const SOCIALS = [
   { icon: <Camera className="w-4 h-4" />, label: "Instagram", href: "#" },
@@ -8,8 +9,13 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark border-t border-gold/[0.08] py-8 px-4">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5">
+    <footer className="bg-primary-dark border-t border-gold/[0.08] pt-12 pb-8 px-4 relative overflow-hidden">
+      {/* Decorative Golden Line Divider */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-72 opacity-30">
+        <OrnamentDivider className="w-full" />
+      </div>
+
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-5 mt-4">
         {/* Logo */}
         <p className="font-display text-gold/80 text-sm md:flex-1 text-center md:text-left">
           Idul Adha 1447 H
@@ -21,7 +27,7 @@ export default function Footer() {
             <a
               key={s.label}
               href={s.href}
-              className="text-gray-500 hover:text-gold transition-colors duration-300"
+              className="text-gray-500 hover:text-gold hover:scale-110 transition-all duration-300"
               aria-label={s.label}
             >
               {s.icon}

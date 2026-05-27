@@ -16,7 +16,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on nav click
   const handleNav = (e, href) => {
     setOpen(false);
     e.preventDefault();
@@ -27,7 +26,7 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-primary-dark/95 backdrop-blur shadow-lg shadow-black/20 py-2.5"
+          ? "bg-gradient-to-b from-black/40 via-primary-dark/95 to-primary-dark py-2.5 shadow-lg shadow-black/30"
           : "bg-transparent py-3"
       }`}
     >
@@ -36,7 +35,6 @@ export default function Header() {
           Idul Adha 1447 H
         </a>
 
-        {/* Desktop nav */}
         <ul className="hidden md:flex gap-8">
           {NAV.map((item) => (
             <li key={item.href}>
@@ -50,7 +48,6 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden text-white/80 hover:text-gold transition-colors p-1"
           onClick={() => setOpen(!open)}
@@ -60,9 +57,8 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden bg-primary-dark/98 backdrop-blur border-t border-gold/10 px-4 pb-4 pt-2">
+        <div className="md:hidden bg-gradient-to-b from-black/50 to-primary-dark backdrop-blur border-t border-gold/10 px-4 pb-4 pt-2">
           {NAV.map((item) => (
             <a
               key={item.href}

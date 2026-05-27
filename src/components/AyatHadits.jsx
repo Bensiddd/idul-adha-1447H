@@ -61,7 +61,7 @@ export default function AyatHadits() {
           {CARDS.map((card, i) => (
             <div
               key={i}
-              className="relative bg-white/[0.02] border border-gold/15 rounded-2xl p-5 md:p-8 hover:border-gold/30 transition-all duration-500 group"
+              className="relative bg-white/[0.02] border border-gold/15 rounded-2xl p-5 md:p-8 hover:border-gold/30 hover:-translate-y-1 transition-all duration-500 group"
             >
               <CornerOrnament className="absolute top-0 left-0 w-10 h-10" />
               <CornerOrnament className="absolute bottom-0 right-0 w-10 h-10 rotate-180" />
