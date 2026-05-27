@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel Decorative", serif;
+  --font-arabic: "Amiri", serif;
+  --font-body: "Plus Jakarta Sans", "Inter", sans-serif;
+
+  --color-primary: #0D5C3A;
+  --color-primary-dark: #073B24;
+  --color-primary-light: #1a7a4e;
+  --color-gold: #D4AF37;
+  --color-gold-light: #f0d878;
+  --color-amber: #F59E0B;
+  --color-bg-light: #F9FBF9;
+  --color-text-primary: #1F2937;
+
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-slow: floatSlow 12s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s ease-in-out infinite;
+  --animate-bounce-subtle: bounceSubtle 2s ease-in-out infinite;
+
+  @keyframes float {
+    0%   { transform: translateY(0) scale(1); opacity: 0; }
+    10%  { opacity: 0.7; }
+    90%  { opacity: 0.05; }
+    100% { transform: translateY(-100vh) scale(0.3); opacity: 0; }
+  }
+
+  @keyframes floatSlow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-16px) rotate(3deg); }
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50%      { opacity: 1; }
+  }
+
+  @keyframes bounceSubtle {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #0D5C3A;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
